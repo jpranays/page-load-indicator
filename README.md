@@ -15,17 +15,6 @@ A lightweight Chrome Extension that displays an in-page spinner overlay whenever
 3. Enable **Developer Mode**.
 4. Click **Load unpacked** and select the extension folder.
 
-## 📁 Project Structure
-
-page-load-indicator/
-├── content.js
-├── manifest.json
-├── icons/
-│ ├── icon16.png
-│ ├── icon48.png
-│ └── icon128.png
-
-
 ## ✅ To-Do (Planned)
 
 - Settings UI to toggle overlay
