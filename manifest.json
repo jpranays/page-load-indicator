@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Page Load Indicator",
+  "version": "1.0.0",
+  "description": "Displays an in-page overlay spinner while the page is loading to prevent double-clicks and improve feedback.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
