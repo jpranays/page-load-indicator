@@ -42,5 +42,20 @@ function hideOverlay() {
   if (overlay) overlay.remove();
 }
 
-window.addEventListener("beforeunload", showOverlay);
+// Determine if this is a full reload or fresh nav
+function isHardNavigation() {
+  const entry = performance.getEntriesByType("navigation")[0];
+  if (entry) {
+    return entry.type === "reload" || entry.type === "navigate";
+  }
+
+  // Fallback for older browsers or when entry is not available
+  return performance.navigation.type === 1 || performance.navigation.type === 0;
+}
+
+// Only attach the overlay logic if it's a hard reload or new nav
+if (isHardNavigation()) {
+  window.addEventListener("beforeunload", showOverlay);
+}
+
 window.addEventListener("load", hideOverlay);
